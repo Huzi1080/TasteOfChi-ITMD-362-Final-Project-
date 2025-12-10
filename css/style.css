@@ -6,11 +6,11 @@ img { max-width: 100%; display: block; }
 /* ====== SIMPLE BASE STYLES ====== */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #fafafa;
+  background: #f6fff8; /* mint background */
   color: #222;
   line-height: 1.5;
   min-height: 100vh;
-  display: grid;                 /* simple page grid: header/main/footer */
+  display: grid; /* simple page grid: header/main/footer */
   grid-template-rows: auto 1fr auto;
 }
 
@@ -31,7 +31,7 @@ p { margin: 0 0 12px; }
 }
 
 .nav-wrap {
-  display: flex;                 /* simple flex row */
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
@@ -43,13 +43,13 @@ p { margin: 0 0 12px; }
   font-weight: bold;
   font-size: 20px;
 }
-.logo span { color: #d94141; }   /* simple accent color */
+.logo span { color: #e25151; } /* red accent for Mint Latte theme */
 
 .site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;                 /* nav links in a row */
+  display: flex;
   gap: 8px;
 }
 .site-nav a {
@@ -60,11 +60,11 @@ p { margin: 0 0 12px; }
 }
 .site-nav a:hover,
 .site-nav a.active {
-  background: #ffe7e7;
+  background: #e9f9ef; /* mint hover */
 }
 
 .nav-toggle {
-  display: none;                 /* shown on mobile */
+  display: none;
   background: #fff;
   border: 1px solid #ddd;
   padding: 6px 10px;
@@ -72,7 +72,7 @@ p { margin: 0 0 12px; }
 }
 
 .mobile-nav {
-  display: none;                 /* toggled open on mobile with JS */
+  display: none;
   background: #fff;
   border-top: 1px solid #eee;
 }
@@ -89,20 +89,22 @@ p { margin: 0 0 12px; }
   padding: 8px 10px;
   border-radius: 6px;
 }
-.mobile-nav a:hover { background: #ffe7e7; }
+.mobile-nav a:hover { background: #e9f9ef; }
 
 /* ====== HERO ====== */
 .hero {
-  background: #fff4ec;           /* light warm background */
+  background: #eafff0; /* soft mint hero */
   padding: 28px 0;
-  border-bottom: 1px solid #f0dcd0;
+  border-bottom: 1px solid #dff5e6;
 }
 .hero-inner {
-  display: grid;                 /* simple 2-col grid */
+  display: grid;
   grid-template-columns: 1.2fr .8fr;
   gap: 16px;
   align-items: center;
 }
+.hero h1 { color: #333; }
+.hero p { color: #555; }
 .hero-cta {
   margin-top: 10px;
   display: flex;
@@ -120,18 +122,18 @@ p { margin: 0 0 12px; }
 }
 .btn:hover { background: #f7f7f7; }
 .btn.primary {
-  background: #d94141;
+  background: #e25151; /* red accent button */
   color: #fff;
-  border-color: #d94141;
+  border-color: #e25151;
 }
 .btn.ghost {
   background: transparent;
 }
 
-/* simple card with a thin border (no heavy shadow) */
+/* ====== CARD BASE ====== */
 .card {
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #e6f3ea; /* mint-tinted border */
   border-radius: 10px;
   padding: 12px;
 }
@@ -143,7 +145,12 @@ p { margin: 0 0 12px; }
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
-.pillar-card { padding: 12px; }
+.pillar-card {
+  padding: 12px;
+}
+.pillar-card h3 {
+  color: #e25151;
+}
 
 /* ====== GENERIC PAGE SECTIONS ====== */
 .page-header {
@@ -152,13 +159,13 @@ p { margin: 0 0 12px; }
   margin-bottom: 12px;
 }
 .split {
-  display: grid;                 /* text + image collage */
+  display: grid;
   grid-template-columns: 1.1fr .9fr;
   gap: 16px;
   align-items: start;
 }
 
-/* simple photo “collage” placeholders */
+/* ====== PHOTO COLLAGE ====== */
 .photo-collage {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -174,7 +181,7 @@ p { margin: 0 0 12px; }
 
 /* ====== FILTERS (Restaurants) ====== */
 .filters {
-  display: flex;                 /* simple flex row */
+  display: flex;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
@@ -188,14 +195,14 @@ p { margin: 0 0 12px; }
   background: #fff;
 }
 
-/* ====== CARDS GRID (Restaurants list) ====== */
+/* ====== RESTAURANT CARDS ====== */
 .grid.cards {
-  display: grid;                 /* basic grid for cards */
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 .card.place { transition: transform .1s; }
-.card.place:hover { transform: translateY(-2px); } /* tiny lift */
+.card.place:hover { transform: translateY(-2px); }
 .card.place img {
   width: 100%;
   height: 180px;
@@ -223,7 +230,7 @@ p { margin: 0 0 12px; }
   cursor: pointer;
 }
 
-/* simple lightbox */
+/* ====== LIGHTBOX ====== */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -252,11 +259,17 @@ p { margin: 0 0 12px; }
   cursor: pointer;
 }
 
-/* ====== FORMS (Contact + Review) ====== */
-.forms { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+/* ====== FORMS ====== */
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
 .form .field { margin: 8px 0; }
 .form label { display: block; font-weight: bold; margin-bottom: 4px; }
-.form input, .form textarea, .form select {
+.form input,
+.form textarea,
+.form select {
   width: 100%;
   padding: 8px 10px;
   border: 1px solid #ddd;
@@ -300,15 +313,21 @@ p { margin: 0 0 12px; }
   padding: 14px 0;
 }
 .footer-logo { display: inline-block; margin-bottom: 6px; }
-.footer-nav { list-style: none; margin: 4px 0; padding: 0; display: grid; gap: 4px; }
+.footer-nav {
+  list-style: none;
+  margin: 4px 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
 .muted { color: #666; }
 .footer-bottom {
   text-align: center;
   padding: 10px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #e6f3ea; /* mint tint */
 }
 
-/* ====== RESPONSIVE (kept simple) ====== */
+/* ====== RESPONSIVE ====== */
 @media (max-width: 900px) {
   .site-nav { display: none; }
   .nav-toggle { display: inline-block; }
