@@ -187,4 +187,41 @@ body[data-page="home"] .hero p { max-width: 600px; color: #333; }
     background-size: 100% 100%, 150% auto;
     background-position: center 45%;
   }
+
+  /* Row of images under the pillars */
+.pillar-gallery {
+  display: flex;
+  justify-content: center;   /* center the row */
+  align-items: center;
+  gap: 24px;                  /* spacing between images */
+  margin: 18px auto 10px;     /* some space above/below */
 }
+
+.pillar-gallery img {
+  width: 340px;               /* same width; adjusts responsively */
+  max-width: 45vw;            /* keep reasonable on small screens */
+  height: 220px;
+  object-fit: cover;          /* crop nicely */
+  border-radius: 14px;        /* rounded edges */
+  border: 1px solid #f0e3a1;  /* matches theme */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform .18s ease-in-out;
+}
+
+.pillar-gallery img:hover {
+  transform: translateY(-2px); /* tiny lift on hover */
+}
+
+/* Mobile wrapping */
+@media (max-width: 900px) {
+  .pillar-gallery {
+    flex-wrap: wrap;          /* stack if needed */
+    gap: 14px;
+  }
+  .pillar-gallery img {
+    width: 100%;
+    max-width: 480px;
+    height: 200px;
+  }
+}
+
