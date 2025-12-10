@@ -367,3 +367,34 @@ body[data-page="home"] .hero .card {
 @media (max-width: 900px) {
   body[data-page="home"] .hero { padding: 28px 0; }
 }
+
+/* === Home hero with Chicago skyline background === */
+/* Change the file extension (.jpg) below to match your actual file:
+   .jpg / .jpeg / .png  */
+body[data-page="home"] .hero {
+  background:
+    linear-gradient(to top, rgba(255,247,209,0.92), rgba(255,247,209,0.72)),
+    url("Pictures/skyline.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding: 60px 0;                 /* a bit taller for impact */
+  color: #222;
+  border-bottom: 1px solid #f0e3a1; /* keeps Charcoal & Sun look */
+}
+
+/* Make the right hero card readable on top of the photo */
+body[data-page="home"] .hero .card {
+  background: rgba(255,255,255,0.92);
+  border-color: #f0e3a1;
+}
+
+/* Slight tweak to headline for better presence on photo */
+body[data-page="home"] .hero h1 { font-size: 2.3rem; color:#1a1a1a; }
+body[data-page="home"] .hero p  { max-width: 600px; color:#333; }
+
+/* Optional: smaller padding on mobile */
+@media (max-width: 900px) {
+  body[data-page="home"] .hero { padding: 36px 0; }
+}
+
