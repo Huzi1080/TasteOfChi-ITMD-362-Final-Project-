@@ -81,6 +81,17 @@ p { margin: 0 0 12px; }
 }
 .btn.primary { background: #222; color: #fff; border-color: #222; }
 
+/* Make “How it Works” match the primary button */
+.hero-cta .btn.ghost {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+.hero-cta .btn.ghost:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
 /* ====== PILLARS ====== */
 .pillars {
   margin: 20px auto;
