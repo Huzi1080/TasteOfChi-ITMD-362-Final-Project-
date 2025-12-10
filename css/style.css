@@ -3,36 +3,33 @@
 html, body { margin: 0; padding: 0; }
 img { max-width: 100%; display: block; }
 
-/* Remove bullets anywhere in the header just in case */
-.site-header ul,
-.site-nav ul,
-.mobile-nav ul { list-style: none; margin: 0; padding: 0; }
-
-/* ====== BASE STYLES ====== */
+/* ====== SIMPLE BASE STYLES ====== */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #fffdf7;
+  background: #fffdf7; /* Charcoal & Sun base */
   color: #222;
   line-height: 1.5;
   min-height: 100vh;
-  display: grid;
+  display: grid; 
   grid-template-rows: auto 1fr auto;
 }
+
+h1, h2, h3 { margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.lead { color: #555; }
+
 .container {
   width: 95%;
   max-width: 1100px;
   margin: 0 auto;
 }
-h1, h2, h3 { margin: 0 0 8px; }
-p { margin: 0 0 12px; }
 
-/* ====== HEADER (clean row, sticky optional) ====== */
+/* ====== HEADER / NAV ====== */
 .site-header {
   background: #fff;
   border-bottom: 1px solid #f0e3a1;
-  position: relative;      /* set sticky by changing to: position: sticky; top: 0; */
-  z-index: 50;
 }
+
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -40,33 +37,33 @@ p { margin: 0 0 12px; }
   padding: 10px 0;
   gap: 16px;
 }
+
 .logo {
   text-decoration: none;
   color: #222;
   font-weight: bold;
   font-size: 20px;
-  white-space: nowrap;
 }
-.logo span { color: #f2b313; }
+.logo span { color: #f2b313; } /* sunflower pop */
 
-/* Desktop nav row */
-.site-nav { display: block; }
 .site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 .site-nav a {
-  display: block;
   text-decoration: none;
   color: #222;
   padding: 6px 10px;
   border-radius: 6px;
 }
 .site-nav a:hover,
-.site-nav a.active { background: #fff0b3; }
+.site-nav a.active {
+  background: #fff0b3; /* light sun highlight */
+}
 
-/* Mobile toggle button: hidden on desktop */
 .nav-toggle {
   display: none;
   background: #fff;
@@ -76,23 +73,32 @@ p { margin: 0 0 12px; }
   cursor: pointer;
 }
 
-/* Mobile menu hidden by default; shown when body gets .nav-open (JS) */
-.mobile-nav { display: none; border-top: 1px solid #eee; background: #fff; }
-.mobile-nav ul { display: grid; gap: 6px; padding: 10px; }
-.mobile-nav a { text-decoration: none; color: #222; padding: 8px 10px; border-radius: 6px; }
+.mobile-nav {
+  display: none;                 /* hidden by default; toggled on body.nav-open */
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+}
+.mobile-nav a {
+  text-decoration: none;
+  color: #222;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
 .mobile-nav a:hover { background: #fff0b3; }
 
-/* ----- Breakpoint: show hamburger & mobile list, hide desktop row ----- */
-@media (max-width: 900px) {
-  .site-nav { display: none; }
-  .nav-toggle { display: inline-block; }
-  /* body.nav-open is a class your JS should toggle on the <body> */
-  body.nav-open .mobile-nav { display: block; }
-}
+/* Show mobile menu when body has .nav-open (toggle via JS) */
+body.nav-open .mobile-nav { display: block; }
 
 /* ====== HERO ====== */
 .hero {
-  background: #fff7d1;
+  background: #fff7d1; /* warm yellow hero band (fallback) */
   padding: 28px 0;
   border-bottom: 1px solid #f0e3a1;
 }
@@ -104,7 +110,12 @@ p { margin: 0 0 12px; }
 }
 .hero h1 { color: #222; }
 .hero p { color: #333; }
-.hero-cta { margin-top: 10px; display: flex; gap: 8px; }
+
+.hero-cta {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -115,30 +126,217 @@ p { margin: 0 0 12px; }
   border-radius: 8px;
   cursor: pointer;
 }
-.btn.primary { background: #222; color: #fff; border-color: #222; }
-
-/* Make “How it Works” match the primary button */
-.hero-cta .btn.ghost {
+.btn:hover { background: #f7f7f7; }
+.btn.primary {
   background: #222;
   color: #fff;
   border-color: #222;
 }
-.hero-cta .btn.ghost:hover {
+.btn.ghost {
+  /* Make ghost look like primary per your request */
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+.btn.ghost:hover {
   background: #333;
   transform: translateY(-1px);
 }
 
-/* ====== PILLARS ====== */
+/* ====== CARD BASE ====== */
+.card {
+  background: #ffffff;
+  border: 1px solid #f0e9cf;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+/* ====== HOME PILLARS ====== */
 .pillars {
   margin: 20px auto;
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
-.pillar-card { padding: 12px; text-align: center; }
+.pillar-card { padding: 12px; }
 .pillar-card h3 { color: #f2b313; }
 
-/* ====== ENHANCED IMAGE GALLERY UNDER PILLARS ====== */
+/* ====== GENERIC PAGE SECTIONS ====== */
+.page-header {
+  padding: 20px 0 12px;
+  border-bottom: 1px solid #f0e3a1;
+  margin-bottom: 12px;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* ====== PHOTO COLLAGE ====== */
+.photo-collage {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.ph { background: #eee; border-radius: 8px; aspect-ratio: 4/3; }
+.ph1 { grid-column: 1 / 5; }
+.ph2 { grid-column: 3 / 7; }
+.ph3 { grid-column: 2 / 6; }
+
+.checklist { padding-left: 16px; }
+.checklist li { margin: 4px 0; }
+
+/* ====== FILTERS (Restaurants) ====== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0;
+}
+.filters input,
+.filters select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* ====== RESTAURANT CARDS ====== */
+.grid.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.card.place { transition: transform .1s; }
+.card.place:hover { transform: translateY(-2px); }
+.card.place img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.place-body { padding: 8px 10px; }
+.place-meta {
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+  color: #555;
+}
+.center { text-align: center; margin: 12px 0; }
+
+/* ====== GALLERY ====== */
+.gallery {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery img {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ====== LIGHTBOX ====== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 92vw;
+  max-height: 70vh;
+  border-radius: 6px;
+  background: #fff;
+}
+.caption { color: #fff; text-align: center; margin-top: 6px; }
+.lightbox-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 28px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ====== FORMS ====== */
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.form .field { margin: 8px 0; }
+.form label { display: block; font-weight: bold; margin-bottom: 4px; }
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+}
+.form .error { color: #b00020; font-size: 12px; min-height: 14px; }
+
+.map { margin: 16px 0; }
+.map-placeholder {
+  height: 300px;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #777;
+  background: #fff;
+}
+
+/* ====== FAQ ====== */
+.accordion details {
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+.accordion summary { cursor: pointer; font-weight: bold; }
+.accordion .accordion-body { margin-top: 6px; color: #555; }
+
+/* ====== FOOTER ====== */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #f0e3a1;
+  margin-top: 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 10px;
+  padding: 14px 0;
+}
+.footer-logo { display: inline-block; margin-bottom: 6px; }
+.footer-nav {
+  list-style: none;
+  margin: 4px 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.muted { color: #666; }
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #f0e3a1;
+}
+
+/* ====== ENHANCED IMAGE ROW UNDER PILLARS ====== */
 .pillar-gallery {
   display: flex;
   justify-content: center;
@@ -161,58 +359,39 @@ p { margin: 0 0 12px; }
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
-/* ====== FOOTER ====== */
-.site-footer {
-  background: #fff;
-  border-top: 1px solid #f0e3a1;
-  margin-top: 20px;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 10px;
-  padding: 14px 0;
-}
-.footer-nav {
-  list-style: none;
-  margin: 4px 0;
-  padding: 0;
-  display: grid;
-  gap: 4px;
-}
-.footer-bottom {
-  text-align: center;
-  padding: 10px 0;
-  border-top: 1px solid #f0e3a1;
-}
-
 /* ====== RESPONSIVE ====== */
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
+  .site-nav { display: none; }
+  .nav-toggle { display: inline-block; }
   .hero-inner { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .grid.cards { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .forms { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .pillar-gallery { gap: 18px; }
   .pillar-gallery img {
     width: 90%;
     max-width: 480px;
     height: 280px;
   }
 }
-@media (max-width: 700px) {
-  .pillars { grid-template-columns: 1fr; }
-  .pillar-gallery { gap: 18px; }
-  .pillar-gallery img {
-    width: 100%;
-    height: 260px;
-  }
+
+@media (max-width: 620px) {
+  .grid.cards { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+  .pillar-gallery img { width: 100%; height: 260px; }
 }
 
-/* ====== HOME SKYLINE BACKGROUND ====== */
+/* ====== HOME SKYLINE BACKGROUND (more skyline visible) ====== */
 body[data-page="home"] .hero {
   background:
     linear-gradient(to top, rgba(255,247,209,0.55), rgba(255,247,209,0.25)),
     url("../Pictures/skyline.jpg");
-  background-size: cover;
-  background-position: center 20%;
+  background-size: cover;              /* preserve proportions */
+  background-position: center 20%;     /* shift up to show the tops */
   background-repeat: no-repeat;
-  min-height: 460px;
+  min-height: 460px;                   /* taller for more skyline area */
   color: #222;
   border-bottom: 1px solid #f0e3a1;
 }
