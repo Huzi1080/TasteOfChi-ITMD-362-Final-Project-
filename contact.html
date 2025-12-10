@@ -1,1 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taste of Chi — Local Food Finder</title>
+  <meta name="description" content="Discover authentic, affordable food spots across Chicago." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body data-page="contact">
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html" aria-label="Taste of Chi Home">Taste<span>of</span>Chi</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" data-nav="home">Home</a></li>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
+          <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
+          <li><a href="contact.html" data-nav="contact">Contact</a></li>
+          <li><a href="faq.html" data-nav="faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile">
+      <ul>
+        <li><a href="index.html" data-nav="home">Home</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+        <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
+        <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
+        <li><a href="contact.html" data-nav="contact">Contact</a></li>
+        <li><a href="faq.html" data-nav="faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Share Your Taste</h1>
+      <p class="lead">Questions, tips, or a hidden gem to share? We’d love to hear it.</p>
+    </section>
+
+    <section class="split forms">
+      <form id="contactForm" class="card form" novalidate>
+        <h2>Contact Us</h2>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+          <small class="error" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+          <small class="error" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <small class="error" aria-live="polite"></small>
+        </div>
+        <button class="btn primary" type="submit">Send Message</button>
+      </form>
+
+      <form id="reviewForm" class="card form" novalidate>
+        <h2>Submit a Review</h2>
+        <div class="field">
+          <label for="place">Place Name</label>
+          <input id="place" name="place" type="text" required />
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="">Select</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <small class="error"></small>
+        </div>
+        <div class="field">
+          <label for="review">Your Review</label>
+          <textarea id="review" name="review" rows="5" required></textarea>
+          <small class="error"></small>
+        </div>
+        <button class="btn" type="submit">Submit Review</button>
+      </form>
+    </section>
+
+    <section class="map card">
+      <h2>Find Us in Chicago</h2>
+      <div class="map-embed">
+        <div class="map-placeholder" role="img" aria-label="Map of Chicago">Map Placeholder</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo footer-logo" href="index.html">Taste<span>of</span>Chi</a>
+        <p class="muted">Authentic, affordable Chicago eats — found by locals, loved by everyone.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h4>Explore</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="restaurants.html">Restaurants</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Follow</h4>
+        <ul class="footer-nav">
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="TikTok">TikTok</a></li>
+          <li><a href="#" aria-label="Yelp">Yelp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>© <span id="year"></span> Taste of Chi. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
 
