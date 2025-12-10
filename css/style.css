@@ -3,6 +3,11 @@
 html, body { margin: 0; padding: 0; }
 img { max-width: 100%; display: block; }
 
+/* Remove bullets anywhere in the header just in case */
+.site-header ul,
+.site-nav ul,
+.mobile-nav ul { list-style: none; margin: 0; padding: 0; }
+
 /* ====== BASE STYLES ====== */
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -21,38 +26,69 @@ body {
 h1, h2, h3 { margin: 0 0 8px; }
 p { margin: 0 0 12px; }
 
-/* ====== HEADER ====== */
+/* ====== HEADER (clean row, sticky optional) ====== */
 .site-header {
   background: #fff;
   border-bottom: 1px solid #f0e3a1;
+  position: relative;      /* set sticky by changing to: position: sticky; top: 0; */
+  z-index: 50;
 }
 .nav-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+  gap: 16px;
 }
 .logo {
   text-decoration: none;
   color: #222;
   font-weight: bold;
   font-size: 20px;
+  white-space: nowrap;
 }
 .logo span { color: #f2b313; }
+
+/* Desktop nav row */
+.site-nav { display: block; }
 .site-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
 }
 .site-nav a {
+  display: block;
   text-decoration: none;
   color: #222;
   padding: 6px 10px;
   border-radius: 6px;
 }
-.site-nav a:hover, .site-nav a.active { background: #fff0b3; }
+.site-nav a:hover,
+.site-nav a.active { background: #fff0b3; }
+
+/* Mobile toggle button: hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Mobile menu hidden by default; shown when body gets .nav-open (JS) */
+.mobile-nav { display: none; border-top: 1px solid #eee; background: #fff; }
+.mobile-nav ul { display: grid; gap: 6px; padding: 10px; }
+.mobile-nav a { text-decoration: none; color: #222; padding: 8px 10px; border-radius: 6px; }
+.mobile-nav a:hover { background: #fff0b3; }
+
+/* ----- Breakpoint: show hamburger & mobile list, hide desktop row ----- */
+@media (max-width: 900px) {
+  .site-nav { display: none; }
+  .nav-toggle { display: inline-block; }
+  /* body.nav-open is a class your JS should toggle on the <body> */
+  body.nav-open .mobile-nav { display: block; }
+}
 
 /* ====== HERO ====== */
 .hero {
@@ -107,17 +143,17 @@ p { margin: 0 0 12px; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 36px;                     /* wider spacing */
+  gap: 36px;
   margin: 30px auto;
   flex-wrap: wrap;
 }
 .pillar-gallery img {
-  width: 480px;                  /* larger, clearer images */
+  width: 480px;
   height: 320px;
-  object-fit: cover;             /* fills box while cropping edges */
-  border-radius: 18px;           /* smooth, rounded edges */
+  object-fit: cover;
+  border-radius: 18px;
   border: 1px solid #f0e3a1;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* soft shadow for pop */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .pillar-gallery img:hover {
@@ -152,6 +188,7 @@ p { margin: 0 0 12px; }
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1000px) {
+  .hero-inner { grid-template-columns: 1fr; }
   .pillar-gallery img {
     width: 90%;
     max-width: 480px;
@@ -172,14 +209,13 @@ body[data-page="home"] .hero {
   background:
     linear-gradient(to top, rgba(255,247,209,0.55), rgba(255,247,209,0.25)),
     url("../Pictures/skyline.jpg");
-  background-size: cover;              /* preserves skyline proportions */
-  background-position: center 20%;     /* shifts image upward to show tops */
+  background-size: cover;
+  background-position: center 20%;
   background-repeat: no-repeat;
-  min-height: 460px;                   /* slightly taller to reveal skyline */
+  min-height: 460px;
   color: #222;
   border-bottom: 1px solid #f0e3a1;
 }
-
 body[data-page="home"] .hero .card {
   background: rgba(255,255,255,0.9);
   border-color: #f0e3a1;
@@ -193,5 +229,6 @@ body[data-page="home"] .hero p {
   max-width: 600px;
   color: #333;
 }
+
 
 
