@@ -6,11 +6,11 @@ img { max-width: 100%; display: block; }
 /* ====== SIMPLE BASE STYLES ====== */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #f6fff8; /* mint background */
+  background: #fffdf7; /* Charcoal & Sun base */
   color: #222;
   line-height: 1.5;
   min-height: 100vh;
-  display: grid; /* simple page grid: header/main/footer */
+  display: grid; 
   grid-template-rows: auto 1fr auto;
 }
 
@@ -27,7 +27,7 @@ p { margin: 0 0 12px; }
 /* ====== HEADER / NAV ====== */
 .site-header {
   background: #fff;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #f0e3a1;
 }
 
 .nav-wrap {
@@ -43,7 +43,7 @@ p { margin: 0 0 12px; }
   font-weight: bold;
   font-size: 20px;
 }
-.logo span { color: #e25151; } /* red accent for Mint Latte theme */
+.logo span { color: #f2b313; } /* sunflower pop */
 
 .site-nav ul {
   list-style: none;
@@ -60,7 +60,7 @@ p { margin: 0 0 12px; }
 }
 .site-nav a:hover,
 .site-nav a.active {
-  background: #e9f9ef; /* mint hover */
+  background: #fff0b3; /* light sun highlight */
 }
 
 .nav-toggle {
@@ -89,13 +89,13 @@ p { margin: 0 0 12px; }
   padding: 8px 10px;
   border-radius: 6px;
 }
-.mobile-nav a:hover { background: #e9f9ef; }
+.mobile-nav a:hover { background: #fff0b3; }
 
 /* ====== HERO ====== */
 .hero {
-  background: #eafff0; /* soft mint hero */
+  background: #fff7d1; /* warm yellow hero band */
   padding: 28px 0;
-  border-bottom: 1px solid #dff5e6;
+  border-bottom: 1px solid #f0e3a1;
 }
 .hero-inner {
   display: grid;
@@ -103,8 +103,8 @@ p { margin: 0 0 12px; }
   gap: 16px;
   align-items: center;
 }
-.hero h1 { color: #333; }
-.hero p { color: #555; }
+.hero h1 { color: #222; }
+.hero p { color: #333; }
 .hero-cta {
   margin-top: 10px;
   display: flex;
@@ -122,9 +122,9 @@ p { margin: 0 0 12px; }
 }
 .btn:hover { background: #f7f7f7; }
 .btn.primary {
-  background: #e25151; /* red accent button */
+  background: #222;
   color: #fff;
-  border-color: #e25151;
+  border-color: #222;
 }
 .btn.ghost {
   background: transparent;
@@ -132,8 +132,8 @@ p { margin: 0 0 12px; }
 
 /* ====== CARD BASE ====== */
 .card {
-  background: #fff;
-  border: 1px solid #e6f3ea; /* mint-tinted border */
+  background: #ffffff;
+  border: 1px solid #f0e9cf;
   border-radius: 10px;
   padding: 12px;
 }
@@ -145,17 +145,13 @@ p { margin: 0 0 12px; }
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
-.pillar-card {
-  padding: 12px;
-}
-.pillar-card h3 {
-  color: #e25151;
-}
+.pillar-card { padding: 12px; }
+.pillar-card h3 { color: #f2b313; }
 
 /* ====== GENERIC PAGE SECTIONS ====== */
 .page-header {
   padding: 20px 0 12px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0e3a1;
   margin-bottom: 12px;
 }
 .split {
@@ -303,7 +299,7 @@ p { margin: 0 0 12px; }
 /* ====== FOOTER ====== */
 .site-footer {
   background: #fff;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #f0e3a1;
   margin-top: 20px;
 }
 .footer-grid {
@@ -324,7 +320,7 @@ p { margin: 0 0 12px; }
 .footer-bottom {
   text-align: center;
   padding: 10px 0;
-  border-top: 1px solid #e6f3ea; /* mint tint */
+  border-top: 1px solid #f0e3a1;
 }
 
 /* ====== RESPONSIVE ====== */
