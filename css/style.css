@@ -340,3 +340,30 @@ p { margin: 0 0 12px; }
   .gallery { grid-template-columns: 1fr; }
 }
 
+/* Home hero with Chicago skyline background */
+body[data-page="home"] .hero {
+  /* soft yellow overlay + skyline image */
+  background:
+    linear-gradient(to top, rgba(255,247,209,0.92), rgba(255,247,209,0.65)),
+    url("images/skyline.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #f0e3a1; /* keep Charcoal & Sun vibe */
+  padding: 40px 0;                  /* a little taller for drama */
+  color: #222;
+  /* If your text gets hard to read, uncomment this:
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  */
+}
+
+/* Make the hero’s right-side card more readable on photo */
+body[data-page="home"] .hero .card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #f0e3a1;
+}
+
+/* Slight breathing room on small screens */
+@media (max-width: 900px) {
+  body[data-page="home"] .hero { padding: 28px 0; }
+}
