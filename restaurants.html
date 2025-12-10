@@ -1,1 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taste of Chi — Local Food Finder</title>
+  <meta name="description" content="Discover authentic, affordable food spots across Chicago." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body data-page="restaurants">
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html" aria-label="Taste of Chi Home">Taste<span>of</span>Chi</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" data-nav="home">Home</a></li>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
+          <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
+          <li><a href="contact.html" data-nav="contact">Contact</a></li>
+          <li><a href="faq.html" data-nav="faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile">
+      <ul>
+        <li><a href="index.html" data-nav="home">Home</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+        <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
+        <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
+        <li><a href="contact.html" data-nav="contact">Contact</a></li>
+        <li><a href="faq.html" data-nav="faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Explore Local Spots</h1>
+      <p class="lead">Search by cuisine, neighborhood, and price to find your next favorite place.</p>
+    </section>
+
+    <section class="filters">
+      <label class="sr-only" for="search">Search</label>
+      <input id="search" type="search" placeholder="Search restaurants…" />
+      <select id="cuisine">
+        <option value="">Cuisine</option>
+        <option>Mexican</option>
+        <option>Chinese</option>
+        <option>Italian</option>
+        <option>Indian</option>
+        <option>Middle Eastern</option>
+      </select>
+      <select id="price">
+        <option value="">Price</option>
+        <option>$</option>
+        <option>$$</option>
+        <option>$$$</option>
+      </select>
+      <select id="neighborhood">
+        <option value="">Neighborhood</option>
+        <option>Loop</option>
+        <option>Pilsen</option>
+        <option>Lincoln Park</option>
+        <option>Hyde Park</option>
+        <option>Chinatown</option>
+      </select>
+      <button id="applyFilters" class="btn">Apply</button>
+      <button id="clearFilters" class="btn ghost">Clear</button>
+    </section>
+
+    <section id="restaurantGrid" class="grid cards">
+      <!-- Cards injected by JS -->
+    </section>
+
+    <div class="center">
+      <button id="loadMore" class="btn ghost">Load More</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo footer-logo" href="index.html">Taste<span>of</span>Chi</a>
+        <p class="muted">Authentic, affordable Chicago eats — found by locals, loved by everyone.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h4>Explore</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="restaurants.html">Restaurants</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Follow</h4>
+        <ul class="footer-nav">
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="TikTok">TikTok</a></li>
+          <li><a href="#" aria-label="Yelp">Yelp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>© <span id="year"></span> Taste of Chi. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
 
