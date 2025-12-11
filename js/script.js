@@ -55,7 +55,6 @@
   if(gridExists){
     renderRestaurants(sampleData);
 
-    const q = document.getElementById('search');
     const cuisine = document.getElementById('cuisine');
     const price = document.getElementById('price');
     const hood = document.getElementById('neighborhood');
