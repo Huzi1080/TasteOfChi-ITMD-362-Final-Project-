@@ -18,7 +18,7 @@
       <nav class="site-nav" aria-label="Primary">
         <ul>
           <li><a href="index.html" data-nav="home">Home</a></li>
-          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="about.html" data-nav="about" aria-current="page">About</a></li>
           <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
           <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
           <li><a href="contact.html" data-nav="contact">Contact</a></li>
@@ -30,7 +30,7 @@
     <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile">
       <ul>
         <li><a href="index.html" data-nav="home">Home</a></li>
-        <li><a href="about.html" data-nav="about">About</a></li>
+        <li><a href="about.html" data-nav="about" aria-current="page">About</a></li>
         <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
         <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
         <li><a href="contact.html" data-nav="contact">Contact</a></li>
@@ -57,30 +57,30 @@
         </ul>
       </div>
       <div class="photo-collage">
-  <figure class="ph ph1">
-    <img src="Pictures/indian.jpg" alt="Indian Cusine">
-  </figure>
-  <figure class="ph ph2">
-    <img src="Pictures/sushi.jpg" alt="Sushi Spot">
-  </figure>
-  <figure class="ph ph3">
-    <img src="Pictures/bagel.jpg" alt="Bagel Cafe">
-  </figure>
-</div>
+        <figure class="ph ph1">
+          <img src="Pictures/indian.jpg" alt="Indian Cuisine">
+        </figure>
+        <figure class="ph ph2">
+          <img src="Pictures/sushi.jpg" alt="Sushi Spot">
+        </figure>
+        <figure class="ph ph3">
+          <img src="Pictures/bagel.jpg" alt="Bagel Cafe">
+        </figure>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div>
         <a class="logo footer-logo" href="index.html">Taste<span>of</span>Chi</a>
-        <p class="muted">Authentic & affordable Chicago eats — found by locals around the Chicagoland area</p>
+        <p class="muted">Authentic &amp; affordable Chicago eats — found by locals around the Chicagoland area</p>
       </div>
       <nav aria-label="Footer">
         <h4>Explore</h4>
         <ul class="footer-nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="restaurants.html">Restaurants</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -102,5 +102,3 @@
   </footer>
 </body>
 </html>
-
-
