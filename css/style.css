@@ -1,9 +1,7 @@
-/* ====== BASIC RESET ====== */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 img { max-width: 100%; display: block; }
 
-/* ====== SIMPLE BASE STYLES ====== */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #fffdf7; /* Charcoal & Sun base */
@@ -44,7 +42,7 @@ p { margin: 0 0 12px; }
   font-weight: bold;
   font-size: 20px;
 }
-.logo span { color: #f2b313; } /* sunflower pop */
+.logo span { color: #f2b313; } 
 
 .site-nav ul {
   list-style: none;
@@ -63,7 +61,7 @@ p { margin: 0 0 12px; }
 
 .site-nav a:hover,
 .site-nav a.active {
-  background: #fff0b3; /* light sun highlight */
+  background: #fff0b3; 
 }
 
 .nav-toggle {
@@ -76,7 +74,7 @@ p { margin: 0 0 12px; }
 }
 
 .mobile-nav {
-  display: none; /* hidden by default; toggled on body.nav-open */
+  display: none; 
   background: #fff;
   border-top: 1px solid #eee;
 }
@@ -98,12 +96,12 @@ p { margin: 0 0 12px; }
 
 .mobile-nav a:hover { background: #fff0b3; }
 
-/* Show mobile menu when body has .nav-open (toggle via JS) */
+
 body.nav-open .mobile-nav { display: block; }
 
 /* ====== HERO ====== */
 .hero {
-  background: #fff7d1; /* warm yellow hero band (fallback) */
+  background: #fff7d1; 
   padding: 28px 0;
   border-bottom: 1px solid #f0e3a1;
 }
@@ -153,7 +151,6 @@ body.nav-open .mobile-nav { display: block; }
   transform: translateY(-1px);
 }
 
-/* ====== CARD BASE ====== */
 .card {
   background: #ffffff;
   border: 1px solid #f0e9cf;
@@ -161,7 +158,6 @@ body.nav-open .mobile-nav { display: block; }
   padding: 12px;
 }
 
-/* ====== HOME PILLARS ====== */
 .pillars {
   margin: 20px auto;
   display: grid;
@@ -172,7 +168,6 @@ body.nav-open .mobile-nav { display: block; }
 .pillar-card { padding: 12px; }
 .pillar-card h3 { color: #f2b313; }
 
-/* ====== GENERIC PAGE SECTIONS ====== */
 .page-header {
   padding: 20px 0 12px;
   border-bottom: 1px solid #f0e3a1;
@@ -206,7 +201,6 @@ body.nav-open .mobile-nav { display: block; }
 .checklist { padding-left: 16px; }
 .checklist li { margin: 4px 0; }
 
-/* ====== FILTERS (Restaurants) ====== */
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -401,7 +395,6 @@ body.nav-open .mobile-nav { display: block; }
   border-top: 1px solid #f0e3a1;
 }
 
-/* ====== ENHANCED IMAGE ROW UNDER PILLARS ====== */
 .pillar-gallery {
   display: flex;
   justify-content: center;
@@ -426,7 +419,6 @@ body.nav-open .mobile-nav { display: block; }
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
-/* ====== RESPONSIVE ====== */
 @media (max-width: 900px) {
   .site-nav { display: none; }
   .nav-toggle { display: inline-block; }
@@ -479,7 +471,6 @@ body[data-page="home"] .hero p {
   color: #333;
 }
 
-/* ====== PHOTO COLLAGE with real images ====== */
 .photo-collage {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -506,7 +497,6 @@ body[data-page="home"] .hero p {
 .ph2 { grid-column: 3 / 7; }
 .ph3 { grid-column: 2 / 6; }
 
-/* ====== SIMPLER CONTACT PAGE STYLE ====== */
 body[data-page="contact"] .forms.contact-simple {
   grid-template-columns: 1fr;
   max-width: 720px;
