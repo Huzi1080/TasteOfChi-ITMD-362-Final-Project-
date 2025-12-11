@@ -480,4 +480,18 @@ body[data-page="contact"] .btn.primary {
   padding: 8px 12px;
 }
 
+/* ====== CONTACT PAGE BUTTON COLOR FIX ====== */
+body[data-page="contact"] .btn,
+body[data-page="contact"] .btn.primary {
+  background: #222;       /* black background */
+  color: #fff;            /* white text */
+  border: 1px solid #222; /* black border */
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+body[data-page="contact"] .btn:hover,
+body[data-page="contact"] .btn.primary:hover {
+  background: #333;       /* slightly lighter black on hover */
+}
 
