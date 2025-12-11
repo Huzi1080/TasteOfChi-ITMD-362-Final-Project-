@@ -1,29 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Taste of Chi — Local Food Finder</title>
   <meta name="description" content="Discover authentic, affordable food spots across Chicago." />
-  <meta name="theme-color" content="#ffffff" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css" />
   <script defer src="js/script.js"></script>
-
 </head>
 
-  <!-- Header -->
-  <header class="site-header">
+<body data-page="home">
+  <header class="site-header" role="banner">
     <div class="container nav-wrap">
       <a class="logo" href="index.html" aria-label="Taste of Chi Home">Taste<span>of</span>Chi</a>
-
       <nav class="site-nav" aria-label="Primary">
-        <ul class="site-nav__list">
+        <ul>
           <li><a href="index.html" data-nav="home" aria-current="page">Home</a></li>
           <li><a href="about.html" data-nav="about">About</a></li>
           <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
@@ -32,15 +26,10 @@
           <li><a href="faq.html" data-nav="faq">FAQ</a></li>
         </ul>
       </nav>
-
-      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">
-        Menu
-      </button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
     </div>
-
-    <!-- Nav Bar -->
     <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile">
-      <ul class="mobile-nav__list">
+      <ul>
         <li><a href="index.html" data-nav="home" aria-current="page">Home</a></li>
         <li><a href="about.html" data-nav="about">About</a></li>
         <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
@@ -51,21 +40,19 @@
     </nav>
   </header>
 
-  <!-- Main -->
-  <main id="main-content">
+  <main>
+    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1 id="hero-heading">Discover Chicago’s Best Food Spots</h1>
+          <h1 id="hero-heading">Discover Chicago’s True Flavor</h1>
           <p>Find hidden gems, budget-friendly restaurants, and neighborhood classics — recommended by locals.</p>
-
           <div class="hero-cta">
-            <a class="btn btn--primary" href="restaurants.html">Explore Restaurants</a>
-            <a class="btn btn--ghost" href="about.html">How it Works</a>
+            <a class="btn primary" href="restaurants.html">Explore Restaurants</a>
+            <a class="btn ghost" href="about.html">How it Works</a>
           </div>
         </div>
-
-        <aside class="hero-card" aria-label="Popular spots">
+        <div class="hero-card">
           <div class="card">
             <h3>Popular Spots Right Now</h3>
             <ul class="popular-list">
@@ -75,13 +62,13 @@
               <li><span aria-hidden="true">🍽</span> Fioretta — $$$</li>
             </ul>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
+    <!-- Three pillars -->
     <section class="pillars container" aria-labelledby="pillars-heading">
-      <h2 id="pillars-heading" class="visually-hidden">Why Taste of Chi</h2>
-
+      <h2 id="pillars-heading" class="sr-only">Why Taste of Chi</h2>
       <article class="pillar-card">
         <h3>Affordable Foods</h3>
         <p>Filter by price to find affordable yet delicious meals within Chicago.</p>
@@ -98,25 +85,20 @@
       </article>
     </section>
 
-    <!-- Image  -->
+    <!-- Centered image row under the pillars -->
     <section class="pillar-gallery container" aria-label="Sample dishes">
-      <figure class="gallery-item">
-        <img src="Pictures/arab.jpg" alt="Traditional Middle Eastern dish from a local Chicago spot" loading="lazy" width="640" height="426">
-      </figure>
-      <figure class="gallery-item">
-        <img src="Pictures/food.jpg" alt="Assorted plates highlighting Chicago’s diverse food scene" loading="lazy" width="640" height="426">
-      </figure>
+      <img src="Pictures/arab.jpg" alt="Arab Food" loading="lazy" width="640" height="426">
+      <img src="Pictures/food.jpg" alt="Chicago Food Scene" loading="lazy" width="640" height="426">
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
-      <div class="footer-brand">
+      <div>
         <a class="logo footer-logo" href="index.html">Taste<span>of</span>Chi</a>
+        <p class="muted">Authentic, affordable Chicago spots — found by locals.</p>
         <p class="muted">Authentic &amp; affordable Chicago eats — found by locals around the Chicagoland area</p>
       </div>
-
       <nav aria-label="Footer">
         <h4>Explore</h4>
         <ul class="footer-nav">
@@ -128,8 +110,7 @@
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </nav>
-
-      <div class="footer-social">
+      <div>
         <h4>Follow</h4>
         <ul class="footer-nav">
           <li><a href="#" aria-label="Instagram">Instagram</a></li>
@@ -139,11 +120,9 @@
         </ul>
       </div>
     </div>
-
     <div class="container footer-bottom">
       <small>© <span id="year"></span> Taste of Chi. All rights reserved.</small>
     </div>
   </footer>
 </body>
 </html>
-
