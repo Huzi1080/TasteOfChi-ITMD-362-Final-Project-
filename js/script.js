@@ -126,7 +126,9 @@
       {src:"https://s3-media0.fl.yelpcdn.com/bphoto/b-3j62AUaKQn7qKG4PuOLQ/348s.jpg", cap:"Mediterranean near Rogers Park"},
       {src:"https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/32f131c8-61e5-45ce-8eac-304d4a7ee3d7.jpg", cap:"Sharks Fish & Chicken"},
       {src:"https://preview.redd.it/trio-french-toast-flight-at-honeybear-cafe-v0-hbjueefovg7c1.jpeg?auto=webp&s=f61441454a2ff84b034f13f2d106e0d22a532e8c", cap:"Honeybear Cafe Rogers Park"},
-      {src:"https://s3-media0.fl.yelpcdn.com/bphoto/Xk_eCdZviriApm2FF1h-Aw/348s.jpg", cap:"Ann Sather Lake View"}
+      {src:"https://s3-media0.fl.yelpcdn.com/bphoto/Xk_eCdZviriApm2FF1h-Aw/348s.jpg", cap:"Ann Sather Lake View"},
+      {src:"https://images.squarespace-cdn.com/content/v1/62684e1fe9da29777be00b0e/1654024147230-PCVWO0QTEPC8944NNB7C/foodphoto4.jpeg", cap:"Hot Chi Chicken Loop Area"},
+      {src:"https://cp1.inkrefuge.com/admin/asset/uploads/441/on_page_element/eggtuck-home-banner.jpg", cap:"Egg Tuck Lincoln Park"}
     ];
     galleryGrid.innerHTML = galleryItems.map(i =>
       `<img src="${i.src}" alt="${i.cap}" data-cap="${i.cap}" loading="lazy">`
