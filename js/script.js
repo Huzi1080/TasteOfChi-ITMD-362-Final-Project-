@@ -23,15 +23,14 @@
   // Restaurants page data + rendering
   const restaurantGrid = document.getElementById('restaurantGrid');
   const sampleData = [
-    {name:"South Side Slice", cuisine:"Italian", price:"$", neighborhood:"Hyde Park", img:"https://images.unsplash.com/photo-1548365328-9f547fb0953d?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Pilsen Street Tacos", cuisine:"Mexican", price:"$", neighborhood:"Pilsen", img:"https://images.unsplash.com/photo-1601050690597-9fd90f5d16b0?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Little Dumpling House", cuisine:"Chinese", price:"$$", neighborhood:"Chinatown", img:"https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Loop Falafel Co.", cuisine:"Middle Eastern", price:"$", neighborhood:"Loop", img:"https://images.unsplash.com/photo-1615141982883-c7ad0d331b5c?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Lincoln Park Pasta", cuisine:"Italian", price:"$$", neighborhood:"Lincoln Park", img:"https://images.unsplash.com/photo-1526312426976-593c222c922f?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Hyde Park Curry", cuisine:"Indian", price:"$$", neighborhood:"Hyde Park", img:"https://images.unsplash.com/photo-1625944527797-f05a1fd9b756?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Pilsen Arepa Bar", cuisine:"Mexican", price:"$", neighborhood:"Pilsen", img:"https://images.unsplash.com/photo-1604908554029-2f2a0d8b5a7c?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Chinatown Noodle Lab", cuisine:"Chinese", price:"$", neighborhood:"Chinatown", img:"https://images.unsplash.com/photo-1550317138-10000687a72b?q=80&w=1200&auto=format&fit=crop"},
-    {name:"Loop Kebab Kitchen", cuisine:"Middle Eastern", price:"$$", neighborhood:"Loop", img:"https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1200&auto=format&fit=crop"}
+    {name:"The Pasta Bowl", cuisine:"Italian", price:"$", neighborhood:"Lincoln Park", img:"https://d2s742iet3d3t1.cloudfront.net/restaurant_service/restaurants/9c5986fd-012c-4dc9-93e8-63d02eca94d8/Restaurant/94eddda8-52cd-4d82-bf32-922511b8360e.jpg"},
+    {name:"El Famous Burrito", cuisine:"Mexican", price:"$", neighborhood:"Rogers Park", img:"https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/store/header/40af2da1-c503-414b-ac7f-303a978c1a8e.JPG"},
+    {name:"MingHin Cuisine", cuisine:"Chinese", price:"$$", neighborhood:"Chinatown", img:"https://tb-static.uber.com/prod/image-proc/processed_images/3c3812fe32953c4c293d9413d8f43b1d/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"},
+    {name:"Trivoli Tavern", cuisine:"Italian", price:"$$$", neighborhood:"Loop", img:"https://www.lemon8-app.com/seo/image?item_id=7225618378269245958&index=0&sign=4f2226a16ec561a93ea61d3935377d3a"},
+    {name:"Little Goat Diner", cuisine:"Diner Classic", price:"$", neighborhood:"Lake View", img:"https://images.squarespace-cdn.com/content/v1/67a74865610a88774386fe2c/1739282391564-D1BHQCUTAKALBFQOI2JC/IMG_8823.jpg"},
+    {name:"Serena Restaurant", cuisine:"Indian", price:"$$", neighborhood:"Rogers Park", img:"https://serenarestaurant.com/wp-content/uploads/2024/09/AuthenticandHalalPakistaniandIndianDishes-ezgif.com-optiwebp.webp"},
+    {name:"Pizzeria Portofino", cuisine:"Italian", price:"$$", neighborhood:"Loop", img:"https://storage.googleapis.com/pizzeriaportofino_bucket/wp-content/uploads/3d394ce6-pizzeria-portofino_bar-harbor-mussels-pigato-portofino-punta-crena-.jpg"},
+    {name:"Meat Moot", cuisine:"Middle Eastern", price:"$$$", neighborhood:"Burbank", img:"https://meatmoot.com.tr/storage/2025/09/Smoked-Beef-Brisket-Meat-Moot-Menu.webp"}
   ];
   let visible = 6;
 
