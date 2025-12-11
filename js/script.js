@@ -1,15 +1,15 @@
-(function(){
+(function () {
   // Nav active state
   const current = document.body.getAttribute('data-page');
-  document.querySelectorAll('[data-nav]').forEach(a=>{
-    if(a.getAttribute('data-nav')===current){ a.classList.add('active'); }
+  document.querySelectorAll('[data-nav]').forEach(a => {
+    if (a.getAttribute('data-nav') === current) a.classList.add('active');
   });
 
   // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const mobile = document.getElementById('mobile-menu');
-  if(toggle && mobile){
-    toggle.addEventListener('click', ()=>{
+  if (toggle && mobile) {
+    toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', (!expanded).toString());
       mobile.style.display = expanded ? 'none' : 'block';
@@ -18,25 +18,35 @@
 
   // Footer year
   const y = document.getElementById('year');
-  if(y){ y.textContent = new Date().getFullYear(); }
+  if (y) y.textContent = new Date().getFullYear();
 
-  // Restaurants page data + rendering
+  // ---------- Restaurants page ----------
   const restaurantGrid = document.getElementById('restaurantGrid');
   const sampleData = [
-    {name:"The Pasta Bowl", cuisine:"Italian", price:"$", neighborhood:"Lincoln Park", img:"https://d2s742iet3d3t1.cloudfront.net/restaurant_service/restaurants/9c5986fd-012c-4dc9-93e8-63d02eca94d8/Restaurant/94eddda8-52cd-4d82-bf32-922511b8360e.jpg"},
-    {name:"El Famous Burrito", cuisine:"Mexican", price:"$", neighborhood:"Rogers Park", img:"https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/store/header/40af2da1-c503-414b-ac7f-303a978c1a8e.JPG"},
-    {name:"MingHin Cuisine", cuisine:"Chinese", price:"$$", neighborhood:"Chinatown", img:"https://tb-static.uber.com/prod/image-proc/processed_images/3c3812fe32953c4c293d9413d8f43b1d/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"},
-    {name:"Trivoli Tavern", cuisine:"Italian", price:"$$$", neighborhood:"Loop", img:"https://www.lemon8-app.com/seo/image?item_id=7225618378269245958&index=0&sign=4f2226a16ec561a93ea61d3935377d3a"},
+    {name:"The Pasta Bowl", cuisine:"Italian", price:"$",  neighborhood:"Lincoln Park", img:"https://d2s742iet3d3t1.cloudfront.net/restaurant_service/restaurants/9c5986fd-012c-4dc9-93e8-63d02eca94d8/Restaurant/94eddda8-52cd-4d82-bf32-922511b8360e.jpg"},
+    {name:"El Famous Burrito", cuisine:"Mexican", price:"$",  neighborhood:"Rogers Park", img:"https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/store/header/40af2da1-c503-414b-ac7f-303a978c1a8e.JPG"},
+    {name:"MingHin Cuisine",   cuisine:"Chinese", price:"$$", neighborhood:"Chinatown",   img:"https://tb-static.uber.com/prod/image-proc/processed_images/3c3812fe32953c4c293d9413d8f43b1d/c9252e6c6cd289c588c3381bc77b1dfc.jpeg"},
+    {name:"Trivoli Tavern",    cuisine:"Italian", price:"$$$", neighborhood:"Loop",        img:"https://www.lemon8-app.com/seo/image?item_id=7225618378269245958&index=0&sign=4f2226a16ec561a93ea61d3935377d3a"},
     {name:"Little Goat Diner", cuisine:"Diner Classic", price:"$", neighborhood:"Lake View", img:"https://images.squarespace-cdn.com/content/v1/67a74865610a88774386fe2c/1739282391564-D1BHQCUTAKALBFQOI2JC/IMG_8823.jpg"},
-    {name:"Serena Restaurant", cuisine:"Indian", price:"$$", neighborhood:"Rogers Park", img:"https://serenarestaurant.com/wp-content/uploads/2024/09/AuthenticandHalalPakistaniandIndianDishes-ezgif.com-optiwebp.webp"},
-    {name:"Pizzeria Portofino", cuisine:"Italian", price:"$$", neighborhood:"Loop", img:"https://storage.googleapis.com/pizzeriaportofino_bucket/wp-content/uploads/3d394ce6-pizzeria-portofino_bar-harbor-mussels-pigato-portofino-punta-crena-.jpg"},
-    {name:"Meat Moot", cuisine:"Middle Eastern", price:"$$$", neighborhood:"Burbank", img:"https://meatmoot.com.tr/storage/2025/09/Smoked-Beef-Brisket-Meat-Moot-Menu.webp"}
+    {name:"Serena Restaurant", cuisine:"Indian",  price:"$$", neighborhood:"Rogers Park", img:"https://serenarestaurant.com/wp-content/uploads/2024/09/AuthenticandHalalPakistaniandIndianDishes-ezgif.com-optiwebp.webp"},
+    {name:"Pizzeria Portofino",cuisine:"Italian", price:"$$", neighborhood:"Loop",        img:"https://storage.googleapis.com/pizzeriaportofino_bucket/wp-content/uploads/3d394ce6-pizzeria-portofino_bar-harbor-mussels-pigato-portofino-punta-crena-.jpg"},
+    {name:"Meat Moot",         cuisine:"Middle Eastern", price:"$$$", neighborhood:"Burbank", img:"https://meatmoot.com.tr/storage/2025/09/Smoked-Beef-Brisket-Meat-Moot-Menu.webp"}
   ];
-  let visible = 6;
 
-  function renderRestaurants(list){
-    if(!restaurantGrid) return;
-    restaurantGrid.innerHTML = list.slice(0, visible).map(r=>`
+  function noResults() {
+    return `
+      <article class="card place" style="grid-column: 1 / -1; text-align:center;">
+        <div class="place-body">
+          <h3>No matches</h3>
+          <div class="place-meta">Try different filters.</div>
+        </div>
+      </article>`;
+  }
+
+  let visible = 6;
+  function renderRestaurants(list) {
+    if (!restaurantGrid) return;
+    const items = list.slice(0, visible).map(r => `
       <article class="card place">
         <img src="${r.img}" alt="${r.name}" loading="lazy" />
         <div class="place-body">
@@ -49,12 +59,14 @@
         </div>
       </article>
     `).join('');
+    restaurantGrid.innerHTML = items || noResults();
   }
 
-  const gridExists = !!restaurantGrid;
-  if(gridExists){
+  if (restaurantGrid) {
     renderRestaurants(sampleData);
 
+    // 🔧 Make search optional (may be absent)
+    const q = document.getElementById('search'); // can be null
     const cuisine = document.getElementById('cuisine');
     const price = document.getElementById('price');
     const hood = document.getElementById('neighborhood');
@@ -64,13 +76,17 @@
 
     let filtered = sampleData.slice();
 
-    function applyFilters(){
-      const term = (q.value || '').toLowerCase().trim();
-      filtered = sampleData.filter(r=>{
-        const matchesTerm = term ? (r.name.toLowerCase().includes(term) || r.cuisine.toLowerCase().includes(term)) : true;
+    function applyFilters() {
+      const term = q ? (q.value || '').toLowerCase().trim() : '';
+      filtered = sampleData.filter(r => {
+        const matchesTerm = term ? (
+          r.name.toLowerCase().includes(term) ||
+          r.cuisine.toLowerCase().includes(term) ||
+          r.neighborhood.toLowerCase().includes(term)
+        ) : true;
         const matchesCuisine = cuisine.value ? r.cuisine === cuisine.value : true;
-        const matchesPrice = price.value ? r.price === price.value : true;
-        const matchesHood = hood.value ? r.neighborhood === hood.value : true;
+        const matchesPrice   = price.value   ? r.price === price.value       : true;
+        const matchesHood    = hood.value    ? r.neighborhood === hood.value : true;
         return matchesTerm && matchesCuisine && matchesPrice && matchesHood;
       });
       visible = 6;
@@ -78,18 +94,31 @@
     }
 
     apply && apply.addEventListener('click', applyFilters);
-    clear && clear.addEventListener('click', ()=>{
-      q.value=''; cuisine.value=''; price.value=''; hood.value='';
-      filtered = sampleData.slice(); visible=6; renderRestaurants(filtered);
+
+    // Also filter immediately on dropdown change (nice UX)
+    [cuisine, price, hood].forEach(el => {
+      el && el.addEventListener('change', applyFilters);
     });
-    loadMore && loadMore.addEventListener('click', ()=>{
-      visible += 3; renderRestaurants(filtered);
+
+    clear && clear.addEventListener('click', () => {
+      if (q) q.value = '';
+      cuisine.value = '';
+      price.value   = '';
+      hood.value    = '';
+      filtered = sampleData.slice();
+      visible = 6;
+      renderRestaurants(filtered);
+    });
+
+    loadMore && loadMore.addEventListener('click', () => {
+      visible += 3;
+      renderRestaurants(filtered);
     });
   }
 
-  // Gallery lightbox
+  // ---------- Gallery lightbox ----------
   const galleryGrid = document.getElementById('galleryGrid');
-  if(galleryGrid){
+  if (galleryGrid) {
     const galleryItems = [
       {src:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop", cap:"Maxwell Street Polish"},
       {src:"https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop", cap:"Deep Dish Classic"},
@@ -98,16 +127,18 @@
       {src:"https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop", cap:"Dim Sum Sunday"},
       {src:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop", cap:"Hyde Park Brunch"}
     ];
-    galleryGrid.innerHTML = galleryItems.map(i=>`<img src="${i.src}" alt="${i.cap}" data-cap="${i.cap}" loading="lazy">`).join('');
+    galleryGrid.innerHTML = galleryItems.map(i =>
+      `<img src="${i.src}" alt="${i.cap}" data-cap="${i.cap}" loading="lazy">`
+    ).join('');
 
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightboxImg');
     const lbCap = document.getElementById('lightboxCaption');
     const lbClose = document.querySelector('.lightbox-close');
 
-    galleryGrid.addEventListener('click', (e)=>{
+    galleryGrid.addEventListener('click', (e) => {
       const target = e.target;
-      if(target.tagName === 'IMG'){
+      if (target.tagName === 'IMG') {
         lbImg.src = target.src;
         lbImg.alt = target.alt;
         lbCap.textContent = target.dataset.cap || '';
@@ -115,44 +146,47 @@
         lb.setAttribute('aria-hidden', 'false');
       }
     });
-    lbClose.addEventListener('click', ()=>{
+    lbClose && lbClose.addEventListener('click', () => {
       lb.classList.remove('open');
       lb.setAttribute('aria-hidden', 'true');
-      lbImg.src='';
+      lbImg.src = '';
     });
-    lb.addEventListener('click', (e)=>{
-      if(e.target === lb){ lbClose.click(); }
+    lb && lb.addEventListener('click', (e) => {
+      if (e.target === lb) lbClose.click();
     });
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape' && lb.classList.contains('open')){ lbClose.click(); }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lb.classList.contains('open')) lbClose.click();
     });
   }
 
-  // Forms validation + confirmation
-  function setupForm(formId){
+  // ---------- Forms ----------
+  function setupForm(formId) {
     const form = document.getElementById(formId);
-    if(!form) return;
-    form.addEventListener('submit', (e)=>{
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       let valid = true;
-      form.querySelectorAll('[required]').forEach(el=>{
+      form.querySelectorAll('[required]').forEach(el => {
         const small = el.parentElement.querySelector('.error');
-        if(!el.value.trim()){
+        if (!el.value.trim()) {
           valid = false;
-          if(small) small.textContent = 'This field is required.';
-          el.setAttribute('aria-invalid','true');
-        }else{
-          if(small) small.textContent = '';
+          if (small) small.textContent = 'This field is required.';
+          el.setAttribute('aria-invalid', 'true');
+        } else {
+          if (small) small.textContent = '';
           el.removeAttribute('aria-invalid');
         }
       });
-      // Simple email check
       const email = form.querySelector('input[type="email"]');
-      if(email){
+      if (email) {
         const ok = /^\S+@\S+\.\S+$/.test(email.value);
-        if(!ok){ valid=false; email.parentElement.querySelector('.error').textContent='Please enter a valid email.'; }
+        if (!ok) {
+          valid = false;
+          const small = email.parentElement.querySelector('.error');
+          if (small) small.textContent = 'Please enter a valid email.';
+        }
       }
-      if(valid){
+      if (valid) {
         alert('Thanks! Your submission has been received.');
         form.reset();
       }
@@ -161,4 +195,3 @@
   setupForm('contactForm');
   setupForm('reviewForm');
 })();
-
