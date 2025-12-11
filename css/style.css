@@ -452,7 +452,6 @@ body[data-page="home"] .hero p {
 .ph1 { grid-column: 1 / 5; }
 .ph2 { grid-column: 3 / 7; }
 .ph3 { grid-column: 2 / 6; }
-}
 
 /* ====== SIMPLER CONTACT PAGE STYLE ====== */
 body[data-page="contact"] .forms.contact-simple {
