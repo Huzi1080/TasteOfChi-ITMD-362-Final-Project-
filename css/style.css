@@ -480,10 +480,4 @@ body[data-page="contact"] .btn.primary {
   padding: 8px 12px;
 }
 
-/* Remove the map section completely */
-body[data-page="contact"] .map {
-  display: none;
-}
-
-
 
