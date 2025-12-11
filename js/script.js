@@ -120,12 +120,13 @@
   const galleryGrid = document.getElementById('galleryGrid');
   if (galleryGrid) {
     const galleryItems = [
-      {src:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop", cap:"Maxwell Street Polish"},
-      {src:"https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop", cap:"Deep Dish Classic"},
-      {src:"https://images.unsplash.com/photo-1544025161-1971a3ea5f19?q=80&w=1200&auto=format&fit=crop", cap:"Bridgeport BBQ"},
-      {src:"https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=1200&auto=format&fit=crop", cap:"Street Tacos in Pilsen"},
-      {src:"https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop", cap:"Dim Sum Sunday"},
-      {src:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop", cap:"Hyde Park Brunch"}
+      {src:"https://meatmoot.com.tr/storage/2023/01/LAMB-SHOULDER-MEAT-MOOT-1-scaled-e1673617640447.webp", cap:"Meat Moot Lamb Shank"},
+      {src:"https://serenarestaurant.com/wp-content/uploads/2023/11/Homepage-min.jpg", cap:"Serena Resturant Seekh Kebob & Chicken Kebob"},
+      {src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAIwNEZOZnOLGz-z_YtwUz--VJXN0DCKrg-A&s", cap:"SALT Burger & Fries"},
+      {src:"https://s3-media0.fl.yelpcdn.com/bphoto/b-3j62AUaKQn7qKG4PuOLQ/348s.jpg", cap:"Mediterranean near Rogers Park"},
+      {src:"https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/32f131c8-61e5-45ce-8eac-304d4a7ee3d7.jpg", cap:"Sharks Fish & Chicken"},
+      {src:"https://preview.redd.it/trio-french-toast-flight-at-honeybear-cafe-v0-hbjueefovg7c1.jpeg?auto=webp&s=f61441454a2ff84b034f13f2d106e0d22a532e8c", cap:"Honeybear Cafe Rogers Park"},
+      {src:"https://s3-media0.fl.yelpcdn.com/bphoto/Xk_eCdZviriApm2FF1h-Aw/348s.jpg", cap:"Ann Sather Lake View"}
     ];
     galleryGrid.innerHTML = galleryItems.map(i =>
       `<img src="${i.src}" alt="${i.cap}" data-cap="${i.cap}" loading="lazy">`
