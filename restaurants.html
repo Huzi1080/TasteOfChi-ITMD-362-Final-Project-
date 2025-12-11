@@ -19,7 +19,7 @@
         <ul>
           <li><a href="index.html" data-nav="home">Home</a></li>
           <li><a href="about.html" data-nav="about">About</a></li>
-          <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
+          <li><a href="restaurants.html" data-nav="restaurants" aria-current="page">Restaurants</a></li>
           <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
           <li><a href="contact.html" data-nav="contact">Contact</a></li>
           <li><a href="faq.html" data-nav="faq">FAQ</a></li>
@@ -31,7 +31,7 @@
       <ul>
         <li><a href="index.html" data-nav="home">Home</a></li>
         <li><a href="about.html" data-nav="about">About</a></li>
-        <li><a href="restaurants.html" data-nav="restaurants">Restaurants</a></li>
+        <li><a href="restaurants.html" data-nav="restaurants" aria-current="page">Restaurants</a></li>
         <li><a href="gallery.html" data-nav="gallery">Gallery</a></li>
         <li><a href="contact.html" data-nav="contact">Contact</a></li>
         <li><a href="faq.html" data-nav="faq">FAQ</a></li>
@@ -45,7 +45,7 @@
       <p class="lead">Search by cuisine, neighborhood, and price to find your next favorite place.</p>
     </section>
 
-    <section class="filters">
+    <section class="filters" aria-label="Filters">
       <select id="cuisine">
         <option value="">Cuisine</option>
         <option>Mexican</option>
@@ -73,7 +73,7 @@
       <button id="clearFilters" class="btn ghost">Clear</button>
     </section>
 
-    <section id="restaurantGrid" class="grid cards">
+    <section id="restaurantGrid" class="grid cards" aria-live="polite">
       <!-- Cards injected by JS -->
     </section>
 
@@ -82,19 +82,19 @@
     </div>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div>
         <a class="logo footer-logo" href="index.html">Taste<span>of</span>Chi</a>
         <p class="muted">Authentic, affordable Chicago eats — found by locals, loved by everyone.</p>
-        <p class="muted">Authentic & affordable Chicago eats — found by locals around the Chicagoland area</p>
+        <p class="muted">Authentic &amp; affordable Chicago eats — found by locals around the Chicagoland area</p>
       </div>
       <nav aria-label="Footer">
         <h4>Explore</h4>
         <ul class="footer-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="restaurants.html">Restaurants</a></li>
+          <li><a href="restaurants.html" aria-current="page">Restaurants</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="faq.html">FAQ</a></li>
@@ -115,3 +115,4 @@
   </footer>
 </body>
 </html>
+
