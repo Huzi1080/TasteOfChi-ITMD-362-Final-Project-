@@ -122,7 +122,7 @@
     const galleryItems = [
       {src:"https://meatmoot.com.tr/storage/2023/01/LAMB-SHOULDER-MEAT-MOOT-1-scaled-e1673617640447.webp", cap:"Meat Moot Lamb Shank"},
       {src:"https://serenarestaurant.com/wp-content/uploads/2023/11/Homepage-min.jpg", cap:"Serena Resturant Seekh Kebob & Chicken Kebob"},
-      {src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAIwNEZOZnOLGz-z_YtwUz--VJXN0DCKrg-A&s", cap:"SALT Burger & Fries"},
+      {src:"https://tb-static.uber.com/prod/image-proc/processed_images/48eb7b673d48cce8183ab481a7ff3173/f6deb0afc24fee6f4bd31a35e6bcbd47.jpeg", cap:"SALT Burger & Fries"},
       {src:"https://s3-media0.fl.yelpcdn.com/bphoto/b-3j62AUaKQn7qKG4PuOLQ/348s.jpg", cap:"Mediterranean near Rogers Park"},
       {src:"https://img.cdn4dd.com/cdn-cgi/image/fit=cover,width=600,height=400,format=auto,quality=80/https://doordash-static.s3.amazonaws.com/media/store/header/32f131c8-61e5-45ce-8eac-304d4a7ee3d7.jpg", cap:"Sharks Fish & Chicken"},
       {src:"https://preview.redd.it/trio-french-toast-flight-at-honeybear-cafe-v0-hbjueefovg7c1.jpeg?auto=webp&s=f61441454a2ff84b034f13f2d106e0d22a532e8c", cap:"Honeybear Cafe Rogers Park"},
