@@ -228,15 +228,29 @@ body.nav-open .mobile-nav { display: block; }
 .center { text-align: center; margin: 12px 0; }
 
 /* ====== GALLERY ====== */
+/* --- Uniform gallery grid --- */
 .gallery {
   display: grid;
-  gap: 6px;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* responsive columns */
 }
+
 .gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;        /* all tiles same shape */
+  height: auto;               /* height driven by aspect-ratio */
+  object-fit: cover;          /* crop to fill box */
   border: 1px solid #eee;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  display: block;
+}
+
+/* Optional: tighter on small screens */
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
 }
 
 /* ====== LIGHTBOX ====== */
