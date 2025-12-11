@@ -452,6 +452,38 @@ body[data-page="home"] .hero p {
 .ph1 { grid-column: 1 / 5; }
 .ph2 { grid-column: 3 / 7; }
 .ph3 { grid-column: 2 / 6; }
+}
+
+/* ====== SIMPLER CONTACT PAGE STYLE ====== */
+body[data-page="contact"] .forms.contact-simple {
+  grid-template-columns: 1fr;          /* single column layout */
+  max-width: 720px;                    /* centered, moderate width */
+  margin: 0 auto 24px;
+  gap: 16px;
+}
+
+body[data-page="contact"] .form {
+  border: 1px solid #eee;              /* light, simple border */
+  box-shadow: none;                    /* remove heavy shadows */
+}
+
+body[data-page="contact"] .form h2 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+body[data-page="contact"] .form .field {
+  margin: 10px 0;
+}
+
+body[data-page="contact"] .btn.primary {
+  padding: 8px 12px;
+}
+
+/* Remove the map section completely */
+body[data-page="contact"] .map {
+  display: none;
+}
 
 
 
